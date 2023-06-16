@@ -12,8 +12,40 @@
         <div class="col-md-3 col-sm-12"> 
           <h1 class="page-header">Penguins vs Turtles</h1>
         </div>
-        <header><h2>Infographic</h2></header>
-        <img src="assets/images/infographic.png">
+
+        <div class="container">
+          <div class="row" class="col-md-12"></div>
+            <div class="col-md-2 col-sm-0"></div>
+            <div class="col-md-3 col-sm-12"> 
+              <h1 class="page-header">Eirene L.</h1>
+            </div>
+              <!-- <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Me</a>
+                  <a class="nav-link active" href="#"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+              </ul> -->
+        </div>
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container" style="background: #ffff">
+              <div class="mt-0">
+                <h2>Infographic</h2>
+                <div style='border-bottom:3px solid lightgrey;'></div>
+              </div>
+              <div style="margin-top: 10px; padding: 20px;">
+                <!-- <img src="assets/images/me.jpeg" class="col-md-3 col-sm-12 img-fluid"> -->
+                <img src="assets/images/infographic.png">
+              </div>
+            </div>
+          </div>
+        
 
         <div class="jumbotron jumbotron-fluid">
           <div class="container" style="background: #ffff">
@@ -28,26 +60,61 @@
             </div>
           </div>
         
-        
-        <header><h2>Methodology</h2></header>
-        <p>Our data currently consists of 572 unique images. 500 of these images are used to train the machine learning model, while the rest of the images are reserved for evaluating the trained model’s performance. Our dataset uses discrete categories to describe the target values, where 0 represents the background, 1 represents the penguins, and 2 represents the turtles. This indicates that our dataset is discrete. </p>
-        <p>To ensure that the dataset has no anomalies, we will clean up and normalize the dataset. Our first step will involve identifying and removing any duplicates, while ensuring that each image is labeled. In addition, to standardize the data we will make sure that all data is formatted consistently, including file formats and image sizes. To define the features of our machine learning model, we will use visual characteristics, color distribution and shape descriptors. Regarding unsupervised learning methods, we are currently evaluating different clustering methods to determine the most suitable choice. As for unsupervised learning methods, we are leaning towards using CNNs because it is commonly used for image classification.</p>
-        <p>With our given approach, there does not appear to be much associated risk in pursuing this task, however there are some factors that could be concerning. One such factor would be the size of our dataset. CNNs require a large amount of data to produce effective results. We will try to mitigate this by acquiring a moderate / large amount of data for our model. Another factor would be, CNNs are typically heavy on mathematical operations. Because of this, it is recommended to utilize GPUs in training. Several of our members have access to GPUs, we should not have a bottleneck in training the model.</p>
-        <p>Costs will purely be computational time and tuning of the models. We have the resources we need as a group to perform well. Training of the model and tweaking of the hyperparameters of our CNN will be the portion of the project which will take the most time. This should take at most an hour given our dataset size. However, we will spend most of our time finetuning our model. Which will require us to experiment with hyperparameters as mentioned before. This effort should take at most a week in time.</p>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container" style="background: #ffff">
+              <div class="mt-0">
+                <h2>Methodology</h2>
+                <div style='border-bottom:3px solid lightgrey;'></div>
+              </div>
+              <div style="margin-top: 10px; padding: 20px;">
+                <!-- <img src="assets/images/me.jpeg" class="col-md-3 col-sm-12 img-fluid"> -->
+                <p>Our data currently consists of 572 unique images. 500 of these images are used to train the machine learning model, while the rest of the images are reserved for evaluating the trained model’s performance. Our dataset uses discrete categories to describe the target values, where 0 represents the background, 1 represents the penguins, and 2 represents the turtles. This indicates that our dataset is discrete. </p>
+                <p>To ensure that the dataset has no anomalies, we will clean up and normalize the dataset. Our first step will involve identifying and removing any duplicates, while ensuring that each image is labeled. In addition, to standardize the data we will make sure that all data is formatted consistently, including file formats and image sizes. To define the features of our machine learning model, we will use visual characteristics, color distribution and shape descriptors. Regarding unsupervised learning methods, we are currently evaluating different clustering methods to determine the most suitable choice. As for unsupervised learning methods, we are leaning towards using CNNs because it is commonly used for image classification.</p>
+                <p>With our given approach, there does not appear to be much associated risk in pursuing this task, however there are some factors that could be concerning. One such factor would be the size of our dataset. CNNs require a large amount of data to produce effective results. We will try to mitigate this by acquiring a moderate / large amount of data for our model. Another factor would be, CNNs are typically heavy on mathematical operations. Because of this, it is recommended to utilize GPUs in training. Several of our members have access to GPUs, we should not have a bottleneck in training the model.</p>
+                <p>Costs will purely be computational time and tuning of the models. We have the resources we need as a group to perform well. Training of the model and tweaking of the hyperparameters of our CNN will be the portion of the project which will take the most time. This should take at most an hour given our dataset size. However, we will spend most of our time finetuning our model. Which will require us to experiment with hyperparameters as mentioned before. This effort should take at most a week in time.</p>
+              </div>
+            </div>
+        </div>
 
-        <header><h2>Results</h2></header>
-        <p>Our expected results are to correctly identify an image into one of three categories; those being penguins, turtles or landscape. Additionally, we would like to see our model perform well on any new data introduced to the system, so avoiding overfitting to our current dataset is also a priority.</p>
-        <p>Our chosen metrics for success are accuracy and recall, which can be combined into a single metric, that being F-Measure. This measure considers the overall precision and completeness when evaluating images and would be useful for this project.</p>
-        <p>Current objectives for the midterm and final respectively are; to be able to distinctly group each of the different image types into clusters, and to have 90%+ accuracy on our supervised learning model.</p>
-        <p>As a midpoint milestone, we will strive to provide analysis on our datasets with different clustering algorithms such as K-Modes and clustering evaluation metrics such as the Davies-Bouldin Index. Our final milestone, we will evaluate our clusters with external measures such as the Fowlkes Mallows across the clustering algorithms we use. As well as the accuracy of our model in predicting the correct class of the image, along with false positive, false negative rates.</p>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container" style="background: #ffff">
+              <div class="mt-0">
+                <h2>Results</h2>
+                <div style='border-bottom:3px solid lightgrey;'></div>
+              </div>
+              <div style="margin-top: 10px; padding: 20px;">
+                <p>Our expected results are to correctly identify an image into one of three categories; those being penguins, turtles or landscape. Additionally, we would like to see our model perform well on any new data introduced to the system, so avoiding overfitting to our current dataset is also a priority.</p>
+                <p>Our chosen metrics for success are accuracy and recall, which can be combined into a single metric, that being F-Measure. This measure considers the overall precision and completeness when evaluating images and would be useful for this project.</p>
+                <p>Current objectives for the midterm and final respectively are; to be able to distinctly group each of the different image types into clusters, and to have 90%+ accuracy on our supervised learning model.</p>
+                <p>As a midpoint milestone, we will strive to provide analysis on our datasets with different clustering algorithms such as K-Modes and clustering evaluation metrics such as the Davies-Bouldin Index. Our final milestone, we will evaluate our clusters with external measures such as the Fowlkes Mallows across the clustering algorithms we use. As well as the accuracy of our model in predicting the correct class of the image, along with false positive, false negative rates.</p>
+              </div>
+            </div>
+          </div>
         
-        <header><h2>Discussion</h2></header>
-        <p>In a conservation context, the differentiation of turtles and penguins has important implications. First, it assists conservationists in differentiating the animals, allowing them to better collect data, and implement strategies for their conservation. Looking at an ecological research perspective, distinguishing between turtles and penguins can provide valuable data to interactions and ecological dynamics. Furthermore, our product can assist in biodiversity monitoring, which leads to a better understanding of the ecosystem’s health. In summary, our product has the potential to promote species conservation and enhance our understanding of the targeted animals ecosystem.</p>
-        <p>In our approach, we will initially hand craft features from our dataset, rather than rely on CNNs. However, we will arrive at working with a CNN which will validate the features we have selected or give us information on feature transformations that would be more successful. If our given model is mostly accurate, it will give us confidence that our model can be expanded to more animals. This could be extremely useful in processing images of different animals into distinct groups according to the type of animal. </p>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container" style="background: #ffff">
+              <div class="mt-0">
+                <h2>Discussion</h2>
+                <div style='border-bottom:3px solid lightgrey;'></div>
+              </div>
+              <div style="margin-top: 10px; padding: 20px;">
+                <p>In a conservation context, the differentiation of turtles and penguins has important implications. First, it assists conservationists in differentiating the animals, allowing them to better collect data, and implement strategies for their conservation. Looking at an ecological research perspective, distinguishing between turtles and penguins can provide valuable data to interactions and ecological dynamics. Furthermore, our product can assist in biodiversity monitoring, which leads to a better understanding of the ecosystem’s health. In summary, our product has the potential to promote species conservation and enhance our understanding of the targeted animals ecosystem.</p>
+                <p>In our approach, we will initially hand craft features from our dataset, rather than rely on CNNs. However, we will arrive at working with a CNN which will validate the features we have selected or give us information on feature transformations that would be more successful. If our given model is mostly accurate, it will give us confidence that our model can be expanded to more animals. This could be extremely useful in processing images of different animals into distinct groups according to the type of animal. </p>
+              </div>
+            </div>
+          </div>
         
-        <header><h2>Reference</h2></header>
-        <p>Kaggle Turtles and Penguins Dataset</p>
-        <a href="https://www.kaggle.com/datasets/abbymorgan/penguins-vs-turtles">Kaggle Turtles and Penguins Dataset</a>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container" style="background: #ffff">
+              <div class="mt-0">
+                <header><h2>Reference</h2></header>
+                <div style='border-bottom:3px solid lightgrey;'></div>
+              </div>
+              <div style="margin-top: 10px; padding: 20px;">
+                <a href="https://www.kaggle.com/datasets/abbymorgan/penguins-vs-turtles">Kaggle Turtles and Penguins Dataset</a>
+              </div>
+            </div>
+          </div>
 
       </article>
     </div>
