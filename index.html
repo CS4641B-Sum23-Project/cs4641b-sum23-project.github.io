@@ -109,31 +109,25 @@
               </div>
               <div style="margin-top: 10px; padding: 20px;">
                 <p>
-                  Our expected results are to correctly identify an image into one of
-                  three categories; those being penguins, turtles or landscape.
-                  Additionally, we would like to see our model perform well on any new
-                  data introduced to the system, so avoiding overfitting to our current
-                  dataset is also a priority.
+                  By resizing the images and strictly analyzing the background color, we were able to improve the differentiation
+                  between images of turtles and penguins. When using edge detection, which helped represent features like the beaks, 
+                  fins, and shells in the provided image did work so well as you can see in the above image. This suggested that the 
+                  features between penguins and turtles might be too like rely solely on edge. Using Histogram of Gradients, we 
+                  discovered penguins exhibit more uniform and gradual changes in gradients, while turtles had a more varied and 
+                  complex gradient. Despite this information, a clear separation between the two classes was still not apparent. 
+                  The most effective approach was the utilization of MobileNetV2 because it automatically distinguished specific 
+                  patterns associated with turtles and penguins and used them as features. 
                 </p>
                 <p>
-                  Our chosen metrics for success are accuracy and recall, which can be
-                  combined into a single metric, that being F-Measure. This measure
-                  considers the overall precision and completeness when evaluating
-                  images and would be useful for this project.
+                  Due to the poor performance of edge detection and gradient distribution we decided to try incorporating these 
+                  techniques with other ones like PCA. We also incorporated data augmentation, utilizing techniques such as funneling 
+                  our images through a data frame and experimenting with trace breaks in code to explore alternative ideas.
                 </p>
                 <p>
-                  Current objectives for the midterm and final respectively are; to be
-                  able to distinctly group each of the different image types into
-                  clusters, and to have 90%+ accuracy on our supervised learning model.
+                  
                 </p>
                 <p>
-                  As a midpoint milestone, we will strive to provide analysis on our
-                  datasets with different clustering algorithms such as K-Means, DB Scan and GMM
-                  clustering evaluation metrics such as the Davies-Bouldin Index and silhouette coefficient. Our
-                  final milestone, we will evaluate our clusters with external measures
-                  such as the Fowlkes Mallows across the clustering algorithms we use.
-                  As well as the accuracy of our model in predicting the correct class
-                  of the image, along with false positive, false negative rates.
+                  
                 </p>
               </div>
             </div>
@@ -166,6 +160,19 @@
                   confidence that our model can be expanded to more animals. This could
                   be extremely useful in processing images of different animals into
                   distinct groups according to the type of animal.
+                </p>
+              </div>
+            </div>
+        </div>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container" style="background: #ffff">
+              <div class="mt-0">
+                <h2>Peer Review</h2>
+                <div style='border-bottom:3px solid lightgrey;'></div>
+              </div>
+              <div style="margin-top: 10px; padding: 20px;">
+                <p>
+                  Placeholder. 
                 </p>
               </div>
             </div>
