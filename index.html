@@ -81,16 +81,23 @@
                   categories to describe the target values, where 0 represents the background, 1 represents the penguins, and 2 represents 
                   the turtles. This indicates that our dataset is discrete.
                 </p>
-                <p>
-                  To ensure that the dataset has no anomalies, we will clean up and normalize the dataset. Our first step will involve 
-                  identifying and removing any duplicates, while ensuring that each image is labeled. In addition, to standardize the 
-                  data we will make sure that all data is formatted consistently, including file formats and image sizes. To define the 
-                  features of our machine learning model, we will use visual characteristics, color distribution and shape descriptors. 
-                  Regarding unsupervised learning methods, we are currently evaluating different clustering methods to determine the most 
-                  suitable choice. As for supervised learning methods, we are leaning towards using CNNs because it is commonly used for 
-                  image classification.
+                <p> 
+                  For cleaning up and standardizing our images we used the provided bounding boxes to reduce the image size. Taking a step further, 
+                  we resized each image to 256 by 256 and 64 by 64 pixels. These actions served multiple purposes, including reducing noise, improving 
+                  computational efficiency, and removing outliers. Each image was then placed into a dataframe where they could be further played with 
+                  with functions we develpoed. These fucntions include: conversion and extraction of the bounding box, finding and applying contours, resizing, applying 
+                  greyscale and preprocessing. Additionally, we may note that the finalized images were placed into a pkl file for ease of access and to 
+                  reduce computation time.
                 </p>
-                
+                <p>
+                  For feature extraction, we ran several algorithms like Canny Edge detection, Histogram of Gradients, MobileNetV2 and ORB. Canny Edge 
+                  Detection was specifically employed to detect edges of the turtle or penguin in the given image. Histogram of Gradients calculated the 
+                  distribution of gradients within the image, generating a histogram based on the gradient values. Among these algorithms, the MobileNetV2 
+                  gave the best results. On the other hand, the algorithm that gave us the worst results was the Oriented FAST and Rotated BRIEF(ORB), 
+                  which is a combination of the FAST corner detector and the BRIEF descriptor. ORB detected key points and features in an image based on 
+                  local intensity, subsequently computing binary descriptors to represent those features. To further reduce dimensionality and perform 
+                  feature selection, we used PCA and Kernel PCA. 
+                </p>
               </div>
             </div>
         </div>
