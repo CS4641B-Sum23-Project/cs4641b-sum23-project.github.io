@@ -111,16 +111,28 @@
                 <p>
                   The following are selected plots: 
                 </p>
+                <figure>
                  <img src="assets/images/Canny_Edges_Features_PCA.jpg">
-                 <img src="assets/images/HOG_Features_PCA.jpg">
-                 <img src="assets/images/k_means_visualization.png" style="width: 1000px; height: 600;"> 
+                <figcaption>Reducing dimensionality with PCA and applying Canny Edges delivered ambiguous results.</figcaption>
+                </figure>
+                <figure>     <img src="assets/images/HOG_Features_PCA.jpg">
+                  <figcaption>With HOG Translation, we achieved a better result.</figcaption>
+                </figure>
+
+                 <figure>
+                 <img src="assets/images/k_means_visualization.png" style="width: 1000px; height: 600;">
+                 <figcaption>With K-Means, we’re able to beautifully separate the turtles and penguins into separate clusters based on color value</figcaption>
+                 </figure> 
                  <img src="assets/images/MobileNetV2_Features_PCA.jpg"> 
                  <img src="assets/images/cluster_gmm_edge_pca.jpg"> 
                  <img src="assets/images/cluster_gmm_edge_pca_metrics.jpg"> 
                  <img src="assets/images/cluster_gmm_hog_pca.jpg"> 
                  <img src="assets/images/cluster_gmm_hog_pca_metrics.jpg"> 
                  <img src="assets/images/cluster_gmm_mobilenet_bb_pca.jpg"> 
+                 <figure>
                  <img src="assets/images/cluster_gmm_mobilenet_bb_pca_metrics.jpg"> 
+                 <figcaption>We were able to get a good separation of the two animals using MobileNetV2, even with reduced dimensions. This method yields the best result, as reflected in the chart of the evaluation metrics</figcaption>
+                </figure>
                  <img src="assets/images/cluster_kmean_edge_pca.jpg"> 
                  <img src="assets/images/cluster_kmean_hog_pca.jpg">
                  <img src="assets/images/cluster_kmean_hog_pca_metrics.jpg"> 
