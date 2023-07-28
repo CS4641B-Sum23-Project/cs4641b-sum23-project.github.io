@@ -99,10 +99,15 @@
                   feature selection, we used PCA and Kernel PCA. 
                 </p>
                 <p>
-                  Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of separating three different classes of images have been done numerous times, we decided to use pre-trained model after researching about our goal. There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow keras model and a ResNet model. Simplicity is key, so we first adopted the Sequential model.
+                  Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of 
+                  separating three different classes of images have been done numerous times, we decided to use pre-trained model after researching about our goal. 
+                  There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow keras model and a 
+                  ResNet model. Simplicity is key, so we first adopted the Sequential model.
                 </p>
                 <p>
-                  Adam optimizer widely used in Deep Learning. Since it is an extension of stochastic gradient descent, it is excellent in helping us avoid getting stuck on local minima. For the compile function’s metrics, we use accuracy, which will allow keras to choose the best accuracy function for us. Below is a summary of our CNN model.
+                  Adam optimizer widely used in Deep Learning. Since it is an extension of stochastic gradient descent, it is excellent in helping us avoid 
+                  getting stuck on local minima. For the compile function’s metrics, we use accuracy, which will allow keras to choose the best accuracy function 
+                  for us. Below is a summary of our CNN model.
                 </p>
                 <img src="assets/images/cnn_model_summary.png">
               </div>
@@ -138,7 +143,8 @@
                  <img src="assets/images/cluster_gmm_mobilenet_bb_pca.jpg"> 
                  <figure>
                  <img src="assets/images/cluster_gmm_mobilenet_bb_pca_metrics.jpg"> 
-                 <figcaption>We were able to get a good separation of the two animals using MobileNetV2, even with reduced dimensions. This method yields the best result, as reflected in the chart of the evaluation metrics</figcaption>
+                 <figcaption>We were able to get a good separation of the two animals using MobileNetV2, even with reduced dimensions. This method 
+                   yields the best result, as reflected in the chart of the evaluation metrics</figcaption>
                 </figure>
                  <img src="assets/images/cluster_kmean_edge_pca.jpg"> 
                  <img src="assets/images/cluster_kmean_hog_pca.jpg">
@@ -151,13 +157,25 @@
                 <img src="assets/images/cnn_accuracy.png">
                 <img src="assets/images/cnn_loss.png">
                 <p>
-                  Our classifier is highly volatile in its prediction accuracy, which is hovering around 40%. Further, the loss is too high. Which means we are making numerous mistakes. This is likely due to several factors:                
+                  Our classifier is highly volatile in its prediction accuracy, which is hovering around 40%. Further, the loss is too high. 
+                  Which means we are making numerous mistakes. This is likely due to several factors:                
                 </p>
                 <ul>
-                  <li>As this is an image classifier, our model will do better with more image data. Five hundred is the minimum, and evidently it’s very little in practice.</li>
-                  <li>The bounding boxes are too big compared to some zoomed out images of the animal.<a href="contact.html">Contact</a></li>
-                  <li>Our model needs more variation of images, further elaborated in the next paragraph.</li>
-                  <li>The animals are evolved to blend in with their surrounding for survival. Hence, the confusion between animal and background image is high. This is reflected in a 2 class classifier between just the penguins and turtle (plot attached below). This model has much higher and stable accuracy.</li>
+                  <li>
+                    As this is an image classifier, our model will do better with more image data. Five hundred is the minimum, and evidently 
+                    it’s very little in practice.
+                  </li>
+                  <li>
+                    The bounding boxes are too big compared to some zoomed out images of the animal.<a href="contact.html">Contact</a>
+                  </li>
+                  <li>
+                    Our model needs more variation of images, further elaborated in the next paragraph.
+                  </li>
+                  <li>
+                    The animals are evolved to blend in with their surrounding for survival. Hence, the confusion between animal and background 
+                    image is high. This is reflected in a 2 class classifier between just the penguins and turtle (plot attached below). This model 
+                    has much higher and stable accuracy.
+                  </li>
                 </ul>
                 <img src="assets/images/cnn_twoclass_accuracy.png">
                 <img src="assets/images/cnn_twoclass_loss.png">
@@ -186,7 +204,18 @@
                   techniques with other ones like PCA. We also incorporated data augmentation, utilizing techniques such as funneling 
                   our images through a data frame and experimenting with trace breaks in code to explore alternative ideas.
                 </p>
-                <p>During our unsupervised learning analysis, we used Clustering, K-means, Gaussian mixture Models (GMM), and DBSCAN. Evaluating the clustering results provided insights into the quality of the clusters. The Silhouette coefficient, which measures cluster separation, seemed relatively low for all charts, indicating that clusters were overlapping with each other. The DBI metric supports the presence of overlapping clusters with it being high around 0.85. Looking at the NMI metric, which quantifies the similarity between predicted clusters and true labels, the score was relatively low. This suggests that the clusters have a limited similarity and our cluster algorithms struggled to capture underlying patterns accurately. Finally, Folkes-Mallow, which is used to evaluate the similarities between predicted clusters and true labels, demonstrated higher scores. Comparing the performance between GMM and K-Means, it seemed like K-Means did much better with its NMI mostly being larger than all the algorithms except Histogram of Gradients. In summary, our analysis revealed the challenge of achieving distinct and well separated clusters due to overlapping patterns. </p> 
+                <p>
+                  During our unsupervised learning analysis, we used Clustering, K-means, Gaussian mixture Models (GMM), and DBSCAN. 
+                  Evaluating the clustering results provided insights into the quality of the clusters. The Silhouette coefficient, which 
+                  measures cluster separation, seemed relatively low for all charts, indicating that clusters were overlapping with each 
+                  other. The DBI metric supports the presence of overlapping clusters with it being high around 0.85. Looking at the NMI 
+                  metric, which quantifies the similarity between predicted clusters and true labels, the score was relatively low. This 
+                  suggests that the clusters have a limited similarity and our cluster algorithms struggled to capture underlying patterns 
+                  accurately. Finally, Folkes-Mallow, which is used to evaluate the similarities between predicted clusters and true labels, 
+                  demonstrated higher scores. Comparing the performance between GMM and K-Means, it seemed like K-Means did much better 
+                  with its NMI mostly being larger than all the algorithms except Histogram of Gradients. In summary, our analysis revealed 
+                  the challenge of achieving distinct and well separated clusters due to overlapping patterns.
+                </p> 
                 <p>
                   As stated above in results, when looking at each alogrithm, MobileNetv2 yieled the best result when paired with PCA. 
                   Kmeans, HOG, and Canny Edges provided decent clustering but fall short, and that makes sense as MobileNetV2 is designed
@@ -195,10 +224,14 @@
                   it isn't as directly involved in that process. 
                 </p>
                 <p>
-                  Given more time to work on this project, we would like to do more exploration on this data. More data preprocessing and augmentation. Simple techniques such as zooms, rotations and flips might make a huge difference. Grayscale conversion and image inversion will give us more information about our misclassification, as per our project midpoint feedback (was pixel intensity the key?).
+                  Given more time to work on this project, we would like to do more exploration on this data. More data preprocessing and 
+                  augmentation. Simple techniques such as zooms, rotations and flips might make a huge difference. Grayscale conversion and 
+                  image inversion will give us more information about our misclassification, as per our project midpoint feedback (was pixel intensity the key?).
                 </p>
                 <p>
-                  In our efforts to improve our classifier, we would like to discover the more non-obvious features of our images and scrutinizing through the details in our data.Additionally, we would like to try comparing the sequential method . Which initially did not seem as appealing to us due to lower accuracy as described in the literature.
+                  In our efforts to improve our classifier, we would like to discover the more non-obvious features of our images and 
+                  scrutinizing through the details in our data.Additionally, we would like to try comparing the sequential method. Which 
+                  initially did not seem as appealing to us due to lower accuracy as described in the literature.
                 </p>
               </div>
             </div>
