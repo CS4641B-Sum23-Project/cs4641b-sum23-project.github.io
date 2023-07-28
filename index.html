@@ -98,6 +98,13 @@
                   local intensity, subsequently computing binary descriptors to represent those features. To further reduce dimensionality and perform 
                   feature selection, we used PCA and Kernel PCA. 
                 </p>
+                <p>
+                  Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of separating three different classes of images have been done numerous times, we decided to use pre-trained model after researching about our goal. There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow keras model and a ResNet model. Simplicity is key, so we first adopted the Sequential model.
+                </p>
+                <p>
+                  Adam optimizer widely used in Deep Learning. Since it is an extension of stochastic gradient descent, it is excellent in helping us avoid getting stuck on local minima. For the compile function’s metrics, we use accuracy, which will allow keras to choose the best accuracy function for us. Below is a summary of our CNN model.
+                </p>
+                <img src="assets/images/cnn_model_summary.png">
               </div>
             </div>
         </div>
@@ -121,7 +128,7 @@
 
                  <figure>
                  <img src="assets/images/k_means_visualization.png" style="width: 1000px; height: 600;">
-                 <figcaption>With K-Means, we’re able to beautifully separate the turtles and penguins into separate clusters based on color value</figcaption>
+                 <figcaption>With K-Means, we are able to beautifully separate the turtles and penguins into separate clusters based on color value</figcaption>
                  </figure> 
                  <img src="assets/images/MobileNetV2_Features_PCA.jpg"> 
                  <img src="assets/images/cluster_gmm_edge_pca.jpg"> 
@@ -138,6 +145,22 @@
                  <img src="assets/images/cluster_kmean_hog_pca_metrics.jpg"> 
                  <img src="assets/images/cluster_kmean_mobilenet_bb_pca.jpg">
                  <img src="assets/images/cluster_kmean_mobilenet_bb_pca_metrics.jpg">
+                <p> 
+                  From the accuracy metric, we were able to record our model’s training and validation accuracy, which is reflected in the plot below.
+                </p>
+                <img src="assets/images/cnn_accuracy.png">
+                <img src="assets/images/cnn_loss.png">
+                <p>
+                  Our classifier is highly volatile in its prediction accuracy, which is hovering around 40%. Further, the loss is too high. Which means we are making numerous mistakes. This is likely due to several factors:                
+                </p>
+                <ul>
+                  <li>As this is an image classifier, our model will do better with more image data. Five hundred is the minimum, and evidently it’s very little in practice.</li>
+                  <li>The bounding boxes are too big compared to some zoomed out images of the animal.<a href="contact.html">Contact</a></li>
+                  <li>Our model needs more variation of images, further elaborated in the next paragraph.</li>
+                  <li>The animals are evolved to blend in with their surrounding for survival. Hence, the confusion between animal and background image is high. This is reflected in a 2 class classifier between just the penguins and turtle (plot attached below). This model has much higher and stable accuracy.</li>
+                </ul>
+                <img src="assets/images/cnn_twoclass_accuracy.png">
+                <img src="assets/images/cnn_twoclass_loss.png">
               </div>
             </div>
         </div>
@@ -170,6 +193,12 @@
                   to process a more complicated load of imformation. Each of the other three are simpler and lack the ability to recognize 
                   the complexity an image may present. Kmeans and HOG still performed decently with PCA, whereas Canny Edges was just ok as
                   it isn't as directly involved in that process. 
+                </p>
+                <p>
+                  Given more time to work on this project, we would like to do more exploration on this data. More data preprocessing and augmentation. Simple techniques such as zooms, rotations and flips might make a huge difference. Grayscale conversion and image inversion will give us more information about our misclassification, as per our project midpoint feedback (was pixel intensity the key?).
+                </p>
+                <p>
+                  In our efforts to improve our classifier, we would like to discover the more non-obvious features of our images and scrutinizing through the details in our data.Additionally, we would like to try comparing the sequential method . Which initially did not seem as appealing to us due to lower accuracy as described in the literature.
                 </p>
               </div>
             </div>
