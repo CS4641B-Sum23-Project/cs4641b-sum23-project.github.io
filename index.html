@@ -59,7 +59,7 @@
                 (CNN) as these models can identify meaningful transformations of
                 images for us, rather than hand crafting these transformations
                 from the images. Despite these models having remarkable success
-                with images where the target is the singular subject. They tend
+                with images where the target is the singular subject, they tend
                 to still have difficulties correctly classifying an image if the
                 image has a lot of “clutter” or “noise” and can often fall short
                 if there are not enough datapoints for the model to work with.
@@ -76,15 +76,16 @@
               <div style="margin-top: 10px; padding: 20px;">
                 <!-- <img src="assets/images/me.jpeg" class="col-md-3 col-sm-12 img-fluid"> -->
                 <p>
-                  Our data currently consists of 572 unique images. 500 of these images are used to train the machine learning model,
+                  Our data currently consists of 857 unique images. 749 of these images are used to train the machine learning model,
                   while the rest of the images are reserved for evaluating the trained model’s performance. Our dataset uses discrete 
-                  categories to describe the target values, where 0 represents the background, 1 represents the penguins, and 2 represents 
-                  the turtles. This indicates that our dataset is discrete.
+                  categories to describe the target values, where 1 represents a penguin, 2 represents a turtle, and 3 represents 
+                  the background.
                 </p>
                 <p> 
-                  For cleaning up and standardizing our images we used the provided bounding boxes to reduce the image size. Taking a step further, 
-                  we resized each image to 256 by 256 and 64 by 64 pixels. These actions served multiple purposes, including reducing noise, improving 
-                  computational efficiency, and removing outliers. Each image was then placed into a dataframe where they could be further played with 
+                  To clean up and standardize our images we used the provided bounding boxes to reduce the image size. We reduced image size even further for specific purposes, e.g. clustering using   
+                  KMeans and training our CNN, by scaling our images to 256x256 and 64x64 pixels when necessary.
+                  In doing so, we reduced noise, improved computational efficiency, and removed outliers.  
+                  Each image was then placed into a dataframe where they could be further played with 
                   with functions we develpoed. These fucntions include: conversion and extraction of the bounding box, finding and applying contours, resizing, applying 
                   greyscale and preprocessing. Additionally, we may note that the finalized images were placed into a pkl file for ease of access and to 
                   reduce computation time.
