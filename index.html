@@ -91,13 +91,11 @@
                   reduce computation time.
                 </p>
                 <p>
-                  We tested several algorithms for feature extraction such as Canny Edge detection, Histogram of Gradients, MobileNetV2 and ORB. Canny Edge Detection was specifically employed to detect edges of the turtle or penguin in the given image. Histogram of Gradients calculated the distribution of gradients within the image, generating a histogram based on the gradient values. Among these algorithms, the MobileNetV2 gave the best results. On the other hand, the algorithm that gave us the worst results was the Oriented FAST and Rotated BRIEF(ORB), which is a combination of the FAST corner detector and the BRIEF descriptor. ORB detected key points and features in an image based on local intensity, subsequently computing binary descriptors to represent those features. To further reduce dimensionality and perform feature selection, we used PCA and Kernel PCA.
+                  For evaluation metrics we used accuracy and confusion matrix. The reason we used it is because confusion matrices work well with models with multiple classes. For example, in our project we have three classes: penguins, turtles, and backgrounds. Furthermore, they provide information on true positives, true negatives, and false positives, and false negatives. As for accuracy, it is simply used to serve as a baseline metric to assess a model’s performance.  
                 </p>
                 <p>
-                  Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of separating three different classes of images have been done numerous times, we decided to use pre-trained model after researching about our goal. There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow Keras model and a ResNet model. Simplicity is key, so we first adopted the Sequential model.
-
-Adam optimizer is widely used in Deep Learning. Since it is an extension of stochastic gradient descent, it is excellent in helping us avoid getting stuck on local minima. For the compile function’s metrics, we use accuracy, which will allow Keras to choose the best accuracy function for us. Below is a summary of our CNN model.
-                <img src="assets/images/cnn_model_summary.png">
+                  We tested several algorithms for feature extraction such as Canny Edge detection, Histogram of Gradients, MobileNetV2 and ORB. Canny Edge Detection was specifically employed to detect edges of the turtle or penguin in the given image. Histogram of Gradients calculated the distribution of gradients within the image, generating a histogram based on the gradient values. Among these algorithms, the MobileNetV2 gave the best results. On the other hand, the algorithm that gave us the worst results was the Oriented FAST and Rotated BRIEF(ORB), which is a combination of the FAST corner detector and the BRIEF descriptor. ORB detected key points and features in an image based on local intensity, subsequently computing binary descriptors to represent those features. To further reduce dimensionality and perform feature selection, we used PCA and Kernel PCA.
+                </p>
               </div>
             </div>
         </div>
@@ -155,7 +153,7 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                         <h3> Supervised </h3>
                       </div>
                       <div style="margin-top: 10px; padding: 20px;">
-
+                        <h3> SVM</h3>
                         <figure>
                           <img src="assets/images/SVM/rbf_05.png">
                           <img src="assets/images/SVM/rbf_075.png">
@@ -164,7 +162,10 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
          
                           </figcaption>
                          </figure>
-
+                         <p></p>
+                         <div style='border-bottom:3px solid lightgrey;'></div>
+                         <p></p>
+                         <h3> Decision Tree and Random Forest</h3>
                          <figure>
                           <img src="assets/images/all_acc_vs_max_depth.jpg">
                           <figcaption>
@@ -182,7 +183,9 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                          </figure>
                   
                 <div style='border-bottom:3px solid lightgrey;'></div>
-                
+                <p></p>
+                <h3> CNN's</h3>
+                 <p></p>
                  <p> 
                   From the accuracy metric, we were able to record our model’s training and validation accuracy, which is reflected in the plot below.
                 </p>
@@ -198,7 +201,7 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                     it’s very little in practice.
                   </li>
                   <li>
-                    The bounding boxes are too big compared to some zoomed out images of the animal.<a href="contact.html">Contact</a>
+                    The bounding boxes are too big compared to some zoomed out images of the animal.
                   </li>
                   <li>
                     The animals are evolved to blend in with their surrounding for survival. Hence, the confusion between animal and background 
@@ -218,48 +221,40 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                 <div style='border-bottom:3px solid lightgrey;'></div>
               </div>
               <div style="margin-top: 10px; padding: 20px;">
+                <h3> Unsupervised </h3>
                 <p>
-                  By resizing the images and strictly analyzing the background color, we were able to improve the differentiation
-                  between images of turtles and penguins. When using edge detection, which helped represent features like the beaks, 
-                  fins, and shells in the provided image did work so well as you can see in the above image. This suggested that the 
-                  features between penguins and turtles might be too like rely solely on edge. Using Histogram of Gradients, we 
-                  discovered penguins exhibit more uniform and gradual changes in gradients, while turtles had a more varied and 
-                  complex gradient. Despite this information, a clear separation between the two classes was still not apparent. 
-                  The most effective approach was the utilization of MobileNetV2 because it automatically distinguished specific 
-                  patterns associated with turtles and penguins and used them as features. 
+                  By resizing the images and strictly analyzing the background color, we were able to improve the differentiation between images of turtles and penguins. When using edge detection, which helped represent features like the beaks, fins, and shells in the provided image did work so well as you can see in the above image. This suggested that the features between penguins and turtles might be too like rely solely on edge. Using Histogram of Gradients, we discovered penguins exhibit more uniform and gradual changes in gradients, while turtles had a more varied and complex gradient. Despite this information, a clear separation between the two classes was still not apparent. The most effective approach was the utilization of MobileNetV2 because it automatically distinguished specific patterns associated with turtles and penguins and used them as features. 
                 </p>
                 <p>
-                  Due to the poor performance of edge detection and gradient distribution we decided to try incorporating these 
-                  techniques with other ones like PCA. We also incorporated data augmentation, utilizing techniques such as funneling 
-                  our images through a data frame and experimenting with trace breaks in code to explore alternative ideas.
+                  Due to the poor performance of edge detection and gradient distribution we decided to try incorporating these techniques with other ones like PCA. We also incorporated data augmentation, utilizing techniques such as funneling our images through a data frame and experimenting with trace breaks in code to explore alternative ideas. Our images from dataset are converted into data frames to integrate data analysis libraries, perform feature extraction, and help with data preprocessing. 
                 </p>
                 <p>
-                  During our unsupervised learning analysis, we used Clustering, K-means, Gaussian mixture Models (GMM), and DBSCAN. 
-                  Evaluating the clustering results provided insights into the quality of the clusters. The Silhouette coefficient, which 
-                  measures cluster separation, seemed relatively low for all charts, indicating that clusters were overlapping with each 
-                  other. The DBI metric supports the presence of overlapping clusters with it being high around 0.85. Looking at the NMI 
-                  metric, which quantifies the similarity between predicted clusters and true labels, the score was relatively low. This 
-                  suggests that the clusters have a limited similarity and our cluster algorithms struggled to capture underlying patterns 
-                  accurately. Finally, Folkes-Mallow, which is used to evaluate the similarities between predicted clusters and true labels, 
-                  demonstrated higher scores. Comparing the performance between GMM and K-Means, it seemed like K-Means did much better 
-                  with its NMI mostly being larger than all the algorithms except Histogram of Gradients. In summary, our analysis revealed 
-                  the challenge of achieving distinct and well separated clusters due to overlapping patterns.
+                  During our unsupervised learning analysis, we used Clustering, K-means, Gaussian mixture Models (GMM), and DBSCAN. Evaluating the clustering results provided insights into the quality of the clusters. The Silhouette coefficient, which measures cluster separation, seemed relatively low for all charts, indicating that clusters were overlapping with each other. The DBI metric supports the presence of overlapping clusters with it being high around 0.85. Looking at the NMI metric, which quantifies the similarity between predicted clusters and true labels, the score was relatively low. This suggests that the clusters have a limited similarity and our cluster algorithms struggled to capture underlying patterns accurately. Finally, Folkes-Mallow, which is used to evaluate the similarities between predicted clusters and true labels, demonstrated higher scores. Comparing the performance between GMM and K-Means, it seemed like K-Means did much better with its NMI mostly being larger than all the algorithms except Histogram of Gradients. In summary, our analysis revealed the challenge of achieving distinct and well separated clusters due to overlapping patterns.  
                 </p> 
+                <h3> Supervised </h3>
                 <p>
-                  As stated above in results, when looking at each alogrithm, MobileNetv2 yieled the best result when paired with PCA. 
-                  Kmeans, HOG, and Canny Edges provided decent clustering but fall short, and that makes sense as MobileNetV2 is designed
-                  to process a more complicated load of imformation. Each of the other three are simpler and lack the ability to recognize 
-                  the complexity an image may present. Kmeans and HOG still performed decently with PCA, whereas Canny Edges was just ok as
-                  it isn't as directly involved in that process. 
+                  During our project, we explored four supervised learning methods: decision trees, random forests, CNNs, and SVMs. The reason behind choosing CNNs was their unique capability to automatically learn hierarchical features from images, regardless of their position, making them ideal for image classification tasks. Decision trees were incorporated in our project due to their effectiveness with smaller datasets and their usefulness in feature importance analysis. Additionally, decision trees can be combined with other machine learning techniques like random forests, which we also employed. We opted for random forests mainly to address the concern of overfitting. Lastly, we used SVMs because of their robustness against overfitting, their ability to handle nonlinear data, and the few hyper parameters needed to tune.  
                 </p>
                 <p>
-                  The results for our binary CNN classifier perfromed better than our multilclass with backgrounds. As spoken about, there reasons for this such as 
+                  As for evaluation metrics we used accuracy and confusion matrix. The reason we used it is because confusion matrices work well with models with multiple classes. For example, in our project we have three classes: penguins, turtles, and backgrounds. Furthermore, they provide information on true positives, true negatives, and false positives, and false negatives. As for accuracy, it is simply used to serve as a baseline metric to assess a model’s performance.  
+                </p>
+                <p>
+                  The results for our binary CNN classifier performed better than our multilclass with backgrounds. As spoken about, there reasons for this such as 
                   animal adaption and color schemes, however I still think there were errors in adjusting our data correctly which led to our results not yielding a high accuracy. 
                   It is entirely possible we used the worng optimizer or activations or had improper depth on the model. For these reasons CNN was not the best supervised learning method for our team. 
+                </p>
+                <p>
+                  The supervised learning methods exhibited significant differences in their performance. SVMs accuracy stayed around 42% to 46%, which is comparatively lower than other methods and not much better than random guessing. As the accuracy for decision tree and random forest, it varied based on the selected feature. Notably, the Mobile Net Random Forests performed the best with an accuracy of 96.3%. Decision Trees performed slightly worse than Random Forests with a maximum accuracy achieved of 88.9%. As seen Random Forests tend to give better accuracy partially because it helps with overfitting in general. This is shown in our results as Random Forests performed better than Decision Trees. Lastly the method that we did last was CNN, which was expected to produce the best results because of the automatic feature learning, pooling layers, and hierarchical representations. However, whether it was an issue in code or by image formatting the multiclass network showed poor results among all types of activations. It seemed to top out at 26.1% each time.  
+                </p>
+
+                <h3> Final Thoughts </h3>
+                <p>
+                  Given more time to work on this project, we would like to do more exploration on this data. More data preprocessing and augmentation. Simple techniques such as zooms, rotations and flips might make a huge difference. Grayscale conversion and image inversion will give us more information about our misclassification, as per our project midpoint feedback (was pixel intensity the key?). 
                 </p>
               </div>
             </div>
         </div>
+
         <div class="jumbotron jumbotron-fluid">
           <div class="container" style="background: #ffff">
               <div class="mt-0">
