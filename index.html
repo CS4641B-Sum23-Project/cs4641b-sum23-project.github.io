@@ -101,12 +101,12 @@
                 <p>
                   Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of 
                   separating three different classes of images have been done numerous times, we decided to use pre-trained model after researching about our goal. 
-                  There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow keras model and a 
+                  There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow Keras model and a 
                   ResNet model. Simplicity is key, so we first adopted the Sequential model.
                 </p>
                 <p>
                   Adam optimizer is widely used in Deep Learning. Since it is an extension of stochastic gradient descent, it is excellent in helping us avoid 
-                  getting stuck on local minima. For the compile function’s metrics, we use accuracy, which will allow keras to choose the best accuracy function 
+                  getting stuck on local minima. For the compile function’s metrics, we use accuracy, which will allow Keras to choose the best accuracy function 
                   for us. Below is a summary of our CNN model.
                 </p>
                 <img src="assets/images/cnn_model_summary.png">
@@ -167,9 +167,6 @@
                   </li>
                   <li>
                     The bounding boxes are too big compared to some zoomed out images of the animal.<a href="contact.html">Contact</a>
-                  </li>
-                  <li>
-                    Our model needs more variation of images, further elaborated in the next paragraph.
                   </li>
                   <li>
                     The animals are evolved to blend in with their surrounding for survival. Hence, the confusion between animal and background 
