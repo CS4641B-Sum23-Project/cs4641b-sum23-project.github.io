@@ -91,16 +91,12 @@
                   reduce computation time.
                 </p>
                 <p>
-                  For feature extraction, we ran several algorithms like Canny Edge detection, Histogram of Gradients, MobileNetV2 and ORB. Canny Edge 
-                  Detection was specifically employed to detect edges of the turtle or penguin in the given image. Histogram of Gradients calculated the 
-                  distribution of gradients within the image, generating a histogram based on the gradient values. Among these algorithms, the MobileNetV2 
-                  gave the best results. On the other hand, the algorithm that gave us the worst results was the Oriented FAST and Rotated BRIEF(ORB), 
-                  which is a combination of the FAST corner detector and the BRIEF descriptor. ORB detected key points and features in an image based on 
-                  local intensity, subsequently computing binary descriptors to represent those features. To further reduce dimensionality and perform 
-                  feature selection, we used PCA and Kernel PCA. 
+                  We tested several algorithms for feature extraction such as Canny Edge detection, Histogram of Gradients, MobileNetV2 and ORB. Canny Edge Detection was specifically employed to detect edges of the turtle or penguin in the given image. Histogram of Gradients calculated the distribution of gradients within the image, generating a histogram based on the gradient values. Among these algorithms, the MobileNetV2 gave the best results. On the other hand, the algorithm that gave us the worst results was the Oriented FAST and Rotated BRIEF(ORB), which is a combination of the FAST corner detector and the BRIEF descriptor. ORB detected key points and features in an image based on local intensity, subsequently computing binary descriptors to represent those features. To further reduce dimensionality and perform feature selection, we used PCA and Kernel PCA.
                 </p>
                 <p>
-                  Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of 
+                  Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of separating three different classes of images have been done numerous times, we decided to use pre-trained model after researching about our goal. There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow Keras model and a ResNet model. Simplicity is key, so we first adopted the Sequential model.
+
+Adam optimizer is widely used in Deep Learning. Since it is an extension of stochastic gradient descent, it is excellent in helping us avoid getting stuck on local minima. For the compile function’s metrics, we use accuracy, which will allow Keras to choose the best accuracy function for us. Below is a summary of our CNN model.Although CNN literature gave us promising outlook at the start, our current classifier’s result is quite underwhelming. Since our task of 
                   separating three different classes of images have been done numerous times, we decided to use pre-trained model after researching about our goal. 
                   There were several excellent choices, promising accuracy of at least 92%; the top contenders being a Sequential TensorFlow Keras model and a 
                   ResNet model. Simplicity is key, so we first adopted the Sequential model.
@@ -121,17 +117,6 @@
                 <div style='border-bottom:3px solid lightgrey;'></div>
               </div>
               <div style="margin-top: 10px; padding: 20px;">
-                <p>
-                  The following are selected plots: 
-                </p>
-                <figure>
-                 <img src="assets/images/Canny_Edges_Features_PCA.jpg">
-                <figcaption>Reducing dimensionality with PCA and applying Canny Edges delivered ambiguous results.</figcaption>
-                </figure>
-                <figure>     <img src="assets/images/HOG_Features_PCA.jpg">
-                  <figcaption>With HOG Translation, we achieved a better result.</figcaption>
-                </figure>
-
                  <figure>
                  <img src="assets/images/k_means_visualization.png" style="width: 1000px; height: 600;">
                  <figcaption>With K-Means, we are able to beautifully separate the turtles and penguins into separate clusters based on color value</figcaption>
