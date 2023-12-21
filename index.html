@@ -14,16 +14,8 @@
   <body>
     <div id="content">
       <article>
-        <div class="col-md-3 col-sm-12">
+        <div class="col-md-4 col-sm-10">
           <h1 class="page-header">Penguins vs Turtles</h1>
-        </div>
-
-        <div class="container">
-          <div class="row" class="col-md-12"></div>
-            <div class="col-md-2 col-sm-0"></div>
-            <div class="col-md-3 col-sm-12"> 
-              <h1 class="page-header"></h1>
-            </div>
         </div>
 <br>
 <br>
@@ -108,42 +100,42 @@
               </div>
               <div style="margin-top: 10px; padding: 20px;">
                  <figure>
-                 <img src="assets/images/Kmeans Centroids/KMeans Centroids.png" style="width: 1000px; height: 600;">
+                 <img class="graph" src="assets/images/Kmeans Centroids/KMeans Centroids.png" style="width: 1000px; height: 600;">
                  <figcaption>
 We utilized KMeans to visualize and cluster our normalized pixel values. In the above graph, you can see that there is some overlap between the three clusters, indicating that there will be some confusion using unsupervised learning algorithms to separate our data. Ideally, these clusters would be completely separated. 
                  </figcaption>
                  </figure> 
                  
                  <figure>
-                  <img src="assets/images/HOG/PCA.png" style="width: 1000px; height:600";>
-                  <img src="assets/images/HOG/Kernel PCA/rbf.png" style="width: 1000px; height:600";>
+                  <img class="graph" src="assets/images/HOG/PCA.png" style="width: 1000px; height:600";>
+                  <img class="graph" src="assets/images/HOG/Kernel PCA/rbf.png" style="width: 1000px; height:600";>
                   <figcaption>
                     In the two above images, we utilized PCA and KPCA to visualize features extracted by HOG.  These graphs indicate a high degree of overlap in features even after reducing the dimensionality of the data.  
                   </figcaption>
                  </figure>
 
                  <figure>
-                  <img src="assets/images/MobileNet Bounding Box/PCA.png" style="width: 1000px; height: 600;">
-                  <img src="assets/images/MobileNet Bounding Box/Kernel PCA/rbf.png" style="width: 1000px; height: 600;">
-                  <img src="assets/images/MobileNet No Bounding Box/PCA/PCA.png" style="width: 1000px; height: 600;">
-                  <img src="assets/images/MobileNet No Bounding Box/Kernel PCA/rbf.png" style="width: 1000px; height: 600;">
+                  <img class="graph" src="assets/images/MobileNet Bounding Box/PCA.png" style="width: 1000px; height: 600;">
+                  <img class="graph" src="assets/images/MobileNet Bounding Box/Kernel PCA/rbf.png" style="width: 1000px; height: 600;">
+                  <img class="graph" src="assets/images/MobileNet No Bounding Box/PCA/PCA.png" style="width: 1000px; height: 600;">
+                  <img class="graph" src="assets/images/MobileNet No Bounding Box/Kernel PCA/rbf.png" style="width: 1000px; height: 600;">
                   <figcaption>
                    We tested MobileNetV2 with and without bounding boxes. PCA performed poorly on both versions of our data, with there being an almost perfect overlap between penguins and turtles. We saw better separation when using a rbf kernel for KPCA. Surprisingly, there is better separation of the features without using bounding boxes.  
  
                   </figcaption>
                  </figure>
 
-                 <img src="assets/images/MobileNetV2_Features_PCA.jpg"> 
-                 <img src="assets/images/cluster_gmm_edge_pca.jpg"> 
-                 <img src="assets/images/cluster_gmm_edge_pca_metrics.jpg"> 
-                 <img src="assets/images/cluster_gmm_hog_pca.jpg"> 
-                 <img src="assets/images/cluster_gmm_hog_pca_metrics.jpg"> 
-                 <img src="assets/images/cluster_gmm_mobilenet_bb_pca.jpg"> 
-                 <img src="assets/images/cluster_kmean_edge_pca.jpg"> 
-                 <img src="assets/images/cluster_kmean_hog_pca.jpg">
-                 <img src="assets/images/cluster_kmean_hog_pca_metrics.jpg"> 
-                 <img src="assets/images/cluster_kmean_mobilenet_bb_pca.jpg">
-                 <img src="assets/images/cluster_kmean_mobilenet_bb_pca_metrics.jpg">
+                 <img class="graph" src="assets/images/MobileNetV2_Features_PCA.jpg">
+                 <img class="graph" src="assets/images/cluster_gmm_edge_pca.jpg">
+                 <img class="graph" src="assets/images/cluster_gmm_edge_pca_metrics.jpg">
+                 <img class="graph" src="assets/images/cluster_gmm_hog_pca.jpg">
+                 <img class="graph" src="assets/images/cluster_gmm_hog_pca_metrics.jpg">
+                 <img class="graph" src="assets/images/cluster_gmm_mobilenet_bb_pca.jpg">
+                 <img class="graph" src="assets/images/cluster_kmean_edge_pca.jpg">
+                 <img class="graph" src="assets/images/cluster_kmean_hog_pca.jpg">
+                 <img class="graph" src="assets/images/cluster_kmean_hog_pca_metrics.jpg">
+                 <img class="graph" src="assets/images/cluster_kmean_mobilenet_bb_pca.jpg">
+                 <img class="graph" src="assets/images/cluster_kmean_mobilenet_bb_pca_metrics.jpg">
                  
                  <div class="jumbotron jumbotron-fluid">
                   <div class="container" style="background: #ffff">
@@ -155,8 +147,8 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                       <div style="margin-top: 10px; padding: 20px;">
                         <h3> SVM</h3>
                         <figure>
-                          <img src="assets/images/SVM/rbf_05.png">
-                          <img src="assets/images/SVM/rbf_075.png">
+                          <img class="graph" src="assets/images/SVM/rbf_05.png">
+                          <img class="graph" src="assets/images/SVM/rbf_075.png">
                           <figcaption>
                             SVM performed poorly on features extracted from MobileNetV2 using our dataset without bounding boxes. Our best performance came from using alpha values of 0.5 and 0.75 to reduce the number of filters while extracting MobileNetV2 features. Both alpha values had the same classification accuracy of 45.37% with separate spreads of misclassified images. Future work to try and improve classification accuracy would include extracting images of animals using the bounding boxes and tuning hyperparameters of the SVM model.  
          
@@ -167,7 +159,7 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                          <p></p>
                          <h3> Decision Tree and Random Forest</h3>
                          <figure>
-                          <img src="assets/images/all_acc_vs_max_depth.jpg">
+                          <img class="graph" src="assets/images/all_acc_vs_max_depth.jpg">
                           <figcaption>
                             <p>
                               Looking at the above plot you can see that the average accuracy for most of the decision trees is higher than the random forests, which is an unexpected outcome. This is mostly likely because of the limited datapoints in our dataset, and it is not prone to overfitting. Furthermore, the features extracted from our images play a significant role in determining accuracy, hence why we go forward with MobileNet features. Because the average accuracy vs maximum depth looks constant after 6-7 maximum depths, tuning the maximum depth does not seem necessary at an initial glance.
@@ -176,7 +168,7 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                               Despite the Decision Trees accuracy on average being higher than Random Forests. The best set of hyperparameters for MobileNet Bounding Box features with a Decisions Tree is a maximum depth of 11, and maximum features of 32.5%. With these parameters, the decision tree performs with an accuracy of 88.9%. Random Forests, however, perform better with an accuracy of 96.3% with 15 estimators, 15 maximum depth, and 65% maximum features. This coincides with our maximum depth graph for Random Forests, as the Random Forest bounding box features accuracy improves as we increase the maximum depth. 
                             </p>
                           </figcaption>
-                          <img src="assets/images/mobilenetbb.png">
+                          <img class="graph" src="assets/images/mobilenetbb.png">
                           <figcaption>
                             Looking closer to the average accuracy plotted against the number of estimators, a significant increase in accuracy is observed from 2 to 6 estimators, after which the rate of improvement slows down. An estimator value of 6 appears to be the optimal choice for conserving computational cost while still achieving good accuracy. However, if computational resources are not a concern, an estimator value of 14 may provide even better performance.  
                           </figcaption>
@@ -184,15 +176,15 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                   
                 <div style='border-bottom:3px solid lightgrey;'></div>
                 <p></p>
-                <h3> CNN's</h3>
+                <h3> CNNs</h3>
                  <p></p>
                  <p> 
                   From the accuracy metric, we were able to record our model’s training and validation accuracy, which is reflected in the plot below.
                 </p>
-                <img src="assets/images/cnn_accuracy.png">
-                <img src="assets/images/cnn_loss.png">
+                <img class="graph" src="assets/images/cnn_accuracy.png">
+                <img class="graph" src="assets/images/cnn_loss.png">
                 <p>
-                  Our classifier is highly volatile in its prediction accuracy, which is hovering around 40%. Further, the loss is too high. 
+                  Our classifier is highly volatile in its prediction accuracy, which is hovering around 40%. This likely means that our model did not converge properly. Further, the loss is too high.
                   Which means we are making numerous mistakes. This is likely due to several factors:                
                 </p>
                 <ul>
@@ -208,8 +200,8 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                     has much higher and stable accuracy.
                   </li>
                 </ul>
-                <img src="assets/images/cnn_twoclass_accuracy.png">
-                <img src="assets/images/cnn_twoclass_loss.png">
+                <img class="graph" src="assets/images/cnn_twoclass_accuracy.png">
+                <img class="graph" src="assets/images/cnn_twoclass_loss.png">
               </div>
             </div>
         </div>
@@ -265,16 +257,16 @@ We utilized KMeans to visualize and cluster our normalized pixel values. In the 
                 >Kaggle Turtles and Penguins Dataset</a
               >
               <br />
-              <a
-                href="https://ieeexplore.ieee.org/abstract/document/9132851?casa_token=GeeAyY3ANu0AAAAA:4df-4yo2tQKZr5yTgExPcTzbx4RzWSUkYqooTc7ygn71H5q7BOMXPrhDW9TG9X_Bmg0LgT8unQ"
-                >Image Classification using SVM and CNN</a
-              >
+              <a href="https://ieeexplore.ieee.org/abstract/document/9132851?casa_token=GeeAyY3ANu0AAAAA:4df-4yo2tQKZr5yTgExPcTzbx4RzWSUkYqooTc7ygn71H5q7BOMXPrhDW9TG9X_Bmg0LgT8unQ"
+                >Image Classification using SVM and CNN</a>
               <br />
-              <a href="https://www.nature.com/articles/s41467-022-27980-y"
-                >Perspectives in machine learning for wildlife conservation</a
-              >
+                <a href="https://www.nature.com/articles/s41467-022-27980-y">Perspectives in machine learning for wildlife conservation</a>
               </div>
             </div>
+        </div>
+              </div>
+          </div>
+        </div>
         </div>
       </article>
     </div>
