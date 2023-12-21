@@ -1,14 +1,22 @@
 .page-header {
-    float: left;
-    background:lightseagreen;
+    /*float: left;*/
+    display: block;
+    background: lightseagreen;
     color: #ffff;
-    padding: 10px 15px;}
+    padding: 10px 15px;
+    font-size: 45px;
+    }
 
 .nav.justify-content-end {
-height: 67px;
-}
+    height: 67px;
+    }
 
 .mt-0 {
-color: lightseagreen;
-padding: 10px;
-}
+    color: lightseagreen;
+    padding: 10px;
+    }
+
+.graph {
+    width: 1000px;
+    height: 600;
+    }
